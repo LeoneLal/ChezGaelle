@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Pacifico", cursive;
+    color: #8c1c13;
+    margin: 0;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img {
+    position: absolute;
+    padding-top: 1%;
+    padding-left: 2%;
+    width: 5%;
+}
+
+.links {
+    width: 50%;
+}
+
+.links ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links ul .link {
+    list-style-type: none;
+    padding-right: 5%;
+    color: #8c1c13;
+    font-family: "Roboto", sans-serif;
+}
+
+.links ul .active {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Présentation Entreprise */
+.presentation {
+    display: flex;
+    align-items: center;
+}
+
+.presentation .img {
+    width: 40%;
+    height: 400px;
+    /* background-image: url("../images/image.png");
+    background: linear-gradient(
+        270deg,
+        red,
+        rgba(255, 0, 0, 0) 100%,
+        url("../images/image.png")
+    ); */
+
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), #e7d7c1),
+        url("../images/image.png");
+
+    background-size: cover;
+    background-position: bottom;
+}
+
+.presentation .chezgaelle {
+    width: 60%;
+    right: 0;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation .chezgaelle p,
+.chezgaelle h2 {
+    width: 60%;
+    text-align: center;
+}
+
+.presentation .chezgaelle h2 {
+    font-size: 36px;
+}
+
+/* Homepage photos*/
+
+.photos {
+    background-color: #735751;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galerie h2 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.galerie .lastPictures, .pictures {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.picture {
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.picture img {
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.galerie .lastPictures .picture legend {
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.photos button {
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+    color: #8c1c13;
+    font-weight: bold;
+    border: none;
+    height: 45px;
+    width: 10%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.galerie button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Galerie photos */
+
+.brown-bg {
+    background-color: #e7d7c1;
+}
+
+.pictures {
+    padding: 50px;
+}
+
+.pictures .picture {
+    background-color: white;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.pictures .picture p {
+    margin: 0;
+    padding: 5px;
+}
+
+.pictures .picture div {
+    padding: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+/* Homepage articles */
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articles h2 {
+    color: #8c1c13;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.galerie .lastArticles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.galerie .lastArticles .article {
+    width: 30%;
+    background-color: white;
+}
+
+.galerie .lastArticles .article img {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.galerie .lastArticles .article .infos {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.galerie .lastArticles .article .infos .details {
+    padding: 10px;
+}
+
+.galerie .lastArticles .article .infos .details h3,
+.galerie .lastArticles .article .infos .details p {
+    margin: 5px;
+}
+
+.galerie .lastArticles .article .infos .fa-link {
+    color: #8c1c13;
+}
+
+p.link {
+    padding: 10px;
+}
+
+.articles button {
+    background-color: #8c1c13;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 45px;
+    width: 10%;
+    margin-bottom: 25px;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+
+.galerie button:focus {
+    outline: none;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+footer .hours {
+    display: flex;
+    align-items: center;
+}
+
+footer .hours h1 {
+    font-family: "Pacifico", cursive;
+    color: #8c1c13;
+    margin: 0;
+}
+
+footer .coordonees {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .social {
+    padding-top: 30px;
+}
+
+footer .coordonees p {
+    margin: 0;
+    padding: 10px;
+}
+
+footer .fas, footer .fab {
+    color: #8c1c13;
+    padding-right: 10px;
+}
+
+i.fa-facebook {
+    color: #1877F2;
+}
+
+.hourByDay p {
+    margin: 0;
+    width: max-content;
+}
+
+.hourByDay {
+    padding: 35px;
+}
+
+/* Gallery */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery .picture {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+}
+
+.gallery .picture button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery .picture img, .lastArticles .article img {
+    width: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/* Gestion utilisateurs */
+
+.justify-evenly .py-12 {
+    width: -webkit-fill-available;
+}
+
+/* BO list */
+.img-list {
+    width: 150px;
+    height: fit-content;
+}
+
+.img-list-article{
+    width: 150px;
+}
+
+.details-list p, .text-xs {
+    padding-bottom: 10px;
+}
+
+/* Show Article */
+
+div .show-details p:last-child, div .show-details {
+    padding-top: 20px;
+}
+
+img.m-auto {
+    height: auto;
+    width: 350px;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.max-w-7xl {
+    max-width: 80rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.shadow-sm {
+    --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+/* Articles gallery */
+
+.articles-gallery {
+    padding: 50px;
+}
+
+.articles-position {
+    margin-bottom: 50px;
+}
+
+/* Admin gallery */
+.add_elem{
+    margin-top: 20px;
+}
+
+.add_element{
+    width: fit-content;
+}
+
+.pictures {
+    display: flex;
+}
+
+/* ************************DASHBOARD ********************* */
+.canvas-div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
+
+canvas {
+    width: 80% !important;
+    height: auto !important;
+    margin: 5%;
+}
+
+.change-values{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.description-admin, .horaires-admin{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: max-content;
+}
+
+.description-admin label, .horaires-admin label{
+    font-size: large;
+}
+
+.description-admin .save-button:hover, .horaires-admin .save-button:hover{
+    background-color: #F59E0B;
+    color: white;
+}
+.description-admin .save-button, .horaires-admin .save-button{
+    font-size: large;
+    border: 1px solid #F59E0B;
+    color: #F59E0B;
+    font-weight: bold;
+    outline: none;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.horaires-admin .per-day{
+    margin: 2px;
+}
+
+
+/* ************************Responsive CRUD ********************* */
+.container {
+    display: flex;
+    justify-content: center;
+}
+.column-card {
+    flex-direction: column;
+}
+
+.center-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.little-card {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.product-card {
+    width: fit-content;
+}
+
+.products-block {
+    margin: auto;
+}
+
+/* Responsive Home Page */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+
+    .presentation{
+        flex-direction: column;
+    }
+    .presentation .img{
+        flex-direction: column;
+        display: none;
+    }
+    .presentation .chezgaelle{
+        width: 100%;
+        position: relative;
+    }
+    .presentation .chezgaelle p, .presentation .chezgaelle h2{
+        margin: 1rem;
+    }
+    .lastPictures .picture,
+    .lastArticles .article {
+        width: 90% !important;
+        margin-bottom: 5%;
+    }
+    .photos button, 
+    .articles button {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .presentation{
+        flex-direction: column;
+    }
+    .presentation .img{
+        flex-direction: column;
+    }
+    .presentation .chezgaelle{
+        width: 100%;
+    }
+    .lastPictures .picture,
+    .lastArticles .article {
+        width: 90% !important;
+    }
+    
+}
+
+/* Responsive galeries photo - articles */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+
+    .pictures .picture, 
+    .galerie .articles .article {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .pictures .picture, 
+    .galerie .articles .article 
+    {
+        width: 100%;
+    }
+
+    footer{
+        flex-direction: column;
+    }
+}

@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/',[HomeController::class, 'index'])->name('index');
-Route::get('/dashboard',[HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
-Route::POST('/dashboard/update/{CHAT}',[HomeController::class, 'update'])->middleware(['auth'])->name('dashboard.update');
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+Route::POST('/dashboard/update/{id}', [HomeController::class, 'update'])->middleware(['auth'])->name('dashboard.update');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -49,10 +49,10 @@ Route::get('/article/{id}/destroy', [ArticleController::class, 'destroy'])->name
 
 // Route for others informations gestion
 Route::get('/admin/services', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/services/create', [ServiceController::class, 'index'])->name('services.index');
-Route::post('/services/create', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/services/{id}/edit', [ServiceController::class, 'index'])->name('services.index');
-Route::post('/services/{id}/edit', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/services/delete', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/services/create', [ServiceController::class, 'store'])->name('services.store');
+Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+Route::put('/services/{id}/edit', [ServiceController::class, 'update'])->name('services.update');
+Route::get('/services/delete', [ServiceController::class, 'destroy'])->name('services.destroy');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

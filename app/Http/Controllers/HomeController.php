@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $description = Home::where('key', 'description')->get();
+        $description = Home::where('id', '1')->first();
         $horaires = Home::where('key', 'like', 'horaires_%')->get();
         foreach( $horaires as $horaire) {
             $horaire->value = explode(" - ", $horaire->value);
@@ -28,7 +28,21 @@ class HomeController extends Controller
         return view('dashboard',compact('horaires', 'description'));
     }
 
-    public function update(Request $request) {
-        dd($request);
+    public function edit()
+    {
+        $description = Home::where('id', '1')->first();
+        $horaires = Home::where('key', 'like', 'horaires_%')->get();
+        foreach( $horaires as $horaire) {
+            $horaire->value = explode(" - ", $horaire->value);
+        }
+
+        return view('dashboard',compact('horaires', 'description'));
+    }
+
+    public function update(Request $request, $id) {
+        $description = Home::where('id', $id)->first();
+        $description->value = $request->get('description');
+        $description->save();
+        return redirect('dashboard');
     }
 }

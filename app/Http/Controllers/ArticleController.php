@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
     public function index()
     {
         $articles = Article::all();
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('articles.index')->with('articles', $articles);
         else
             return redirect()->route('index');
@@ -19,7 +20,7 @@ class ArticleController extends Controller
     public function create()
     {
         $articles = Article::all();
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('articles.create')->with('articles', $articles);
         else
             return redirect()->route('index');
@@ -45,7 +46,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::find($id);
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('articles.show')->with('article', $article);
         else
             return redirect()->route('index');
@@ -54,7 +55,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('articles.edit')->with('article', $article);
         else
             return redirect()->route('index');

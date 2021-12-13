@@ -504,6 +504,17 @@ canvas {
 }
 
 
+/* ************************DASHBOARD - SERVICES ********************* */
+.services .logo{
+    width: auto;
+    height: 150px;
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+}
+
 /* ************************Responsive CRUD ********************* */
 .container {
     display: flex;
@@ -535,7 +546,7 @@ canvas {
 }
 
 /* Responsive Home Page */
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .presentation{
         flex-direction: column;

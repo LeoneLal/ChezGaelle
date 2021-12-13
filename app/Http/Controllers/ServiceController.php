@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Services;
-use App\Models\Picture;
+use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -15,9 +15,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $pictures = Picture::all();
-        if( \Auth::user()->role == 'Administrateur')
-            return view('pictures.index')->with('pictures', $pictures);
+        $services = Service::all();
+        if( Auth::user()->role == 'Administrateur')
+            return view('services.index')->with('services', $services);
         else
             return redirect()->route('index');
     }
@@ -29,7 +29,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        if( Auth::user()->role == 'Administrateur')
+            return view('services.create');
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -40,7 +43,18 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['file' => 'required|mimes:png,jpg,svg']);
+        
+        $logo = $request->file('file')->getClientOriginalName();
+        $request->file->move(public_path('images/services'), $logo);
+
+        $service = new Service;
+        $service->name = $request->name;
+        $service->description = $request->description;
+        $service->picture_path = $logo;
+        $service->save();
+
+        return redirect()->route('services.index');
     }
 
     /**
@@ -62,7 +76,11 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        if( Auth::user()->role == 'Administrateur')
+            return view('services.edit')->with('service', $service);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -74,7 +92,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

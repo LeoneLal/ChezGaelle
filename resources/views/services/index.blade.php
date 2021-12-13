@@ -8,7 +8,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 add_element">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('/service/create') }}">
+                    <a href="{{ url('/services/create') }}">
                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                             Ajouter un service
                         </button>
@@ -19,16 +19,16 @@
     </div>
     <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8 pictures">
         @foreach ($services as $service)
-        <div class="picture">
-            <img src="{{ URL::to('/') }}/images/pictures/{{ $service->picture_path }}">
+        <div class="services">
+            <img class="logo" src="{{ URL::to('/') }}/images/services/{{ $service->picture_path }}" alt="{{ $service->picture_path }}">
             <span>{{ $service->name }}</span>
-            <a href="{{ route('article.edit',  $article->id) }}">
+            <a href="{{ route('services.edit',  $service->id) }}">
                 <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                     Edit
                 </button>
             </a>
             <a href="{{ route('services.destroy',  $service->id) }}">
-                <button  type="button" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                <button type="button" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                     Supprimer
                 </button>
             </a>

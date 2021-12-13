@@ -17,7 +17,7 @@
                     </div>
                     <div class="items-center border-b border-teal-500 py-2">
                         <label for="body">Body</label>
-                        <textarea name="body" id="body" type="number" value="{{$article->body}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" >{{$article->body}}</textarea>
+                        <textarea name="body" id="body" type="number" value="{{$article->body}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" rows="5" cols="33">{{$article->body}}</textarea>
                     </div>
                     <div class="mt-5">
                         <a href="{{ route('article.update',  $article->id) }}">

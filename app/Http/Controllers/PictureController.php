@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Picture;
+use Illuminate\Support\Facades\Auth;
 
 class PictureController extends Controller
 {
     public function index()
     {
         $pictures = Picture::all();
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('pictures.index')->with('pictures', $pictures);
         else
             return redirect()->route('index');
@@ -18,7 +19,7 @@ class PictureController extends Controller
 
     public function create()
     {
-        if( \Auth::user()->role == 'Administrateur')
+        if( Auth::user()->role == 'Administrateur')
             return view('pictures.create');
         else
             return redirect()->route('index');

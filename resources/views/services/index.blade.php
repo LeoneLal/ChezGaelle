@@ -20,18 +20,22 @@
     <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8 pictures">
         @foreach ($services as $service)
         <div class="services">
-            <img class="logo" src="{{ URL::to('/') }}/images/services/{{ $service->picture_path }}" alt="{{ $service->picture_path }}">
-            <span>{{ $service->name }}</span>
-            <a href="{{ route('services.edit',  $service->id) }}">
-                <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
-                    Edit
-                </button>
-            </a>
-            <a href="{{ route('services.destroy',  $service->id) }}">
-                <button type="button" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+            <div class="infos">
+                <img class="logo" src="{{ URL::to('/') }}/images/services/{{ $service->picture_path }}" alt="{{ $service->picture_path }}">
+                <span>{{ $service->name }}</span>
+            </div>
+            <div class="buttons">
+                <a href="{{ route('services.edit',  $service->id) }}">
+                    <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                        Edit
+                    </button>
+                </a>
+                <a href="{{ route('services.destroy',  $service->id) }}">
+                <button  type="button" class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
                     Supprimer
                 </button>
             </a>
+            </div>
         </div>
         @endforeach
     </div>

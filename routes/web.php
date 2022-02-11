@@ -53,6 +53,6 @@ Route::get('/services/create', [ServiceController::class, 'create'])->name('serv
 Route::post('/services/create', [ServiceController::class, 'store'])->name('services.store');
 Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
 Route::put('/services/{id}/edit', [ServiceController::class, 'update'])->name('services.update');
-Route::get('/services/delete', [ServiceController::class, 'destroy'])->name('services.destroy');
+Route::get('/services/delete/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 require __DIR__ . '/auth.php';

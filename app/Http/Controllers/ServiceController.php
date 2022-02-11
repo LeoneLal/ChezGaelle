@@ -92,6 +92,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request, $id);
         
     }
 
@@ -103,6 +104,8 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::where('id', $id)->first();
+        $service->delete();
+        return redirect('/admin/services');
     }
 }

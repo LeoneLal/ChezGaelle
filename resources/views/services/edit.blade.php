@@ -16,9 +16,9 @@
                                 <label for="name">Nom du service</label>
                                 <input type="text" name="name" value="{{ $service->name }}" id="name">
                             </div>
-                            <div class="picture" >
+                            <div class="picture">
                                 <label for="file">Modifier la photo</label>
-                                <input type="file" name="file" placeholder="Choisir un fichier" id="file">
+                                <input type="file" name="file" placeholder="{{ $service->picture_path }}" id="file">
                                 @error('file')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
@@ -28,11 +28,13 @@
                                 <textarea name="description" id="description" class="appearance-none bg-transparent w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" rows="5" cols="33">{{$service->description }}</textarea>
                             </div>
                             <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 py-1 px-2 rounded" type="submit">
-                                Ajouter
+                                Modifier
                             </button>
-                            <button class=" border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
-                                Annuler
-                            </button>
+                            <a href="{{ route('services.index') }}">
+                                <button class=" border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+                                    Annuler
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

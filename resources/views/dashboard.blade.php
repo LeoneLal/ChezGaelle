@@ -23,7 +23,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <a href="{{ route('services.index') }}">
-                    <div class=" canvas-div p-6 bg-white border-b border-gray-200">Autres informations</div>
+                    <div class=" canvas-div p-6 bg-white border-b border-gray-200">Services</div>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <a href="{{ route('books.index') }}">
+                    <div class=" canvas-div p-6 bg-white border-b border-gray-200">Livres</div>
                 </a>
             </div>
         </div>

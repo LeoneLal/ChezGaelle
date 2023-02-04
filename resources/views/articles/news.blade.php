@@ -18,7 +18,8 @@
             <ul>
             <li class="link"><a href="{{ route('index') }}">Accueil</a></li>
             <li class="link"><a href="{{ route('pictures.pictures') }}">Galerie</a></li>
-            <li class="link active"><a href="{{ route('articles.news') }}">Actus</a></li>
+            <li class="link active"><a href="{{ route('articles.news') }}">Actus</a></li>            
+            <li class="link"><a href="{{ route('books.books') }}">Livres</a></li>
             <!-- <li class="link">Infos complémentaires</li> -->
             </ul>
         </div>

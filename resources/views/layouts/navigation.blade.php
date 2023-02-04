@@ -24,6 +24,9 @@
                     <x-nav-link href="{{ url('/admin/services') }}">
                         Services
                     </x-nav-link>
+                    <x-nav-link href="{{ url('/admin/books') }}">
+                        Livres
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -83,6 +86,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/services') }}">
                 Services
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/books') }}">
+                Livres
             </x-responsive-nav-link>
         </div>
 

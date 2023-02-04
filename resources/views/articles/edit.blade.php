@@ -12,11 +12,11 @@
                 <form class="w-full max-w-sm" action="{{ route('article.edit',  $article->id) }}" method="POST">
                     @csrf
                     <div class="items-center border-b border-teal-500 py-2">
-                        <label for="title">Title</label>
+                        <label for="title">Titre</label>
                         <input name="title" id="title" type="text" value="{{$article->title}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" >
                     </div>
                     <div class="items-center border-b border-teal-500 py-2">
-                        <label for="body">Body</label>
+                        <label for="body">Corp de texte</label>
                         <textarea name="body" id="body" type="number" value="{{$article->body}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" rows="5" cols="33">{{$article->body}}</textarea>
                     </div>
                     <div class="mt-5">

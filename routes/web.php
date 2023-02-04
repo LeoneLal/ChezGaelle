@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PictureController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +56,12 @@ Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('ser
 Route::put('/services/{id}/edit', [ServiceController::class, 'update'])->name('services.update');
 Route::get('/services/delete/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
+// Routes for books
+Route::get('/admin/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/books', [BookController::class, 'books'])->name('books.books');
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+Route::post('/books/create', [BookController::class, 'store'])->name('books.store');
+Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+Route::post('/books/{id}/edit', [BookController::class, 'update'])->name('books.update');
+Route::get('/books/{id}/destroy', [BookController::class, 'destroy'])->name('books.destroy');
 require __DIR__ . '/auth.php';

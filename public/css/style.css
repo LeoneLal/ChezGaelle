@@ -27,6 +27,40 @@ button:focus{
     outline: none;
 }
 
+.btn {
+  
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-add{
+    background-color: #80cce7;
+}
+
+.btn-back{
+    background-color: #e7b280;
+}
+
+.btn-delete{
+    background-color: #e78080;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -73,14 +107,6 @@ a {
 .presentation .img {
     width: 40%;
     height: 400px;
-    /* background-image: url("../images/image.png");
-    background: linear-gradient(
-        270deg,
-        red,
-        rgba(255, 0, 0, 0) 100%,
-        url("../images/image.png")
-    ); */
-
     background-image: linear-gradient(to right, rgba(245, 246, 252, 0), #e7d7c1),
         url("../images/image.png");
 
@@ -445,8 +471,11 @@ img.m-auto {
     margin-bottom: 50px;
 }
 
-/* Admin gallery */
+/* //////////////Admin gallery /////////////////// */
 .add_elem{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
     margin-top: 20px;
 }
 
@@ -559,6 +588,167 @@ canvas {
 .products-block {
     margin: auto;
 }
+
+/* //////////////Partie Books////////////////// */
+.books-creation {
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.books-creation .form-data{
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.books-creation .form-data form{
+    width: 100%;
+}
+
+.books-creation .form-data .bloc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+.bloc-image{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.books-creation .form-data .bloc input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.admin-books{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.admin-books .admin-book{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.admin-books .admin-book img{
+    height: 200px;
+    width: min-content;
+}
+
+.librairie{
+    padding-bottom: 10px;
+}
+
+.librairie .title{
+    color: #8c1c13;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.librairie .window{
+    background-color: #fff;
+    border-radius: 50px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.librairie .lasts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.librairie .lasts .container {
+    z-index: 1;
+    perspective:3000px;
+    justify-content: space-around;
+    height: 450px;
+    width: 85%;
+}
+
+.librairie .window .lasts .title {
+    margin-top: 5px;
+}
+
+.librairie .window .lasts .shelf {
+    z-index: 0;
+    margin-top: 500px;
+    position: absolute;
+    width: 85%;
+}
+
+.librairie .window .lasts .container .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.librairie .window .lasts .container .last img{
+    height: 75%;
+    width: fit-content;
+}
+
+.librairie .window .lasts .container .second img{
+    height: 65%;
+    width: fit-content;
+}
+.librairie .window .lasts .container .third img{
+    height: 55%;
+    width: fit-content;
+}
+
+.window  .title {
+    margin-top: 75px;
+}
+  
+
+.window .books {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+.window .books .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 13%;
+    background-color: #F8F3ED;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 1%;
+}
+
+.window .books .book .cover {
+    height: 200px;
+}
+
+.window .books .book .infos {
+    text-align: center;
+}
+  
+  
+  
+
+  
 
 /* Responsive Home Page */
 @media screen and (max-width: 768px) {

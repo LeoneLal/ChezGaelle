@@ -16,6 +16,11 @@
         <div class="admin-book">
             <img src="{{ URL::to('/') }}/images/books/{{ $book->picture_path }}">
             <span>{{ $book->name }} - {{ $book->author }}</span>
+            <a href="{{ route('books.edit', $book->id) }}">
+                <button type="button" class="btn btn-update">
+                    Modifier
+                </button>
+            </a>
             <a href="{{ route('books.destroy',  $book->id) }}">
                 <button type="button" class="btn btn-delete">
                     Supprimer

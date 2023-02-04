@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ url('/articles/create') }}">
-                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        <button class="btn btn-add">
                             Ajouter un article
                         </button>
                     </a>
@@ -30,12 +30,11 @@
                         <p>{{ $article->title }}</p>
                         <p class="text-xs">Auteur : {{ $article->author }}</p>
                         <a href="{{ route('article.edit',  $article->id) }}">
-                            <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
-                                Edit
+                            <button class="btn btn-update"> Edit
                             </button>
                         </a>
                         <a href="{{ route('article.destroy',  $article->id) }}">
-                            <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                            <button class="btn btn-delete">
                                 Delete
                             </button>
                         </a>

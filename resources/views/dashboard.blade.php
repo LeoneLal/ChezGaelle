@@ -4,7 +4,6 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -42,23 +41,26 @@
                 <form class="w-full max-w-sm" action="{{ route('dashboard.update', $description->id) }}" method="POST">
                     @csrf
                     <label for="description">Description - Page d'accueil : </label>
-                    <textarea name="description" id="" cols="30" rows="10" value="{{ $description->value }}">{{ $description->value }}</textarea>
-                    <button type="submit" class="save-button">Enregistrer</button>
+                    <textarea class="description" name="description" cols="30" rows="10" value="{{ $description->value }}">{{ $description->value }}</textarea>
+                    <button type="submit" class="btn btn-save">Enregistrer</button>
                 </form>
             </div>
         </div>
         <div class="max-w-7xl sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg horaires-admin">
-                <label for="horaires">Horaires d'ouverture - Page d'accueil : </label>
-                @foreach( $horaires as $horaire)
-                <div class="per-day">
-                    <span>Ouverture</span>
-                    <input type="time" name="open" id="" value="{{ $horaire->value[0] }}">
-                    <span>Fermeture</span>
-                    <input type="time" name="close" id="" value="{{ $horaire->value[1] }}">
-                </div>
-                @endforeach
-                <button type="submit" class="save-button">Enregistrer</button>
+                <form class="w-full max-w-sm" action="{{ route('dashboard.updateHours') }}" method="POST">
+                    @csrf
+                    <label for="horaires">Horaires d'ouverture - Page d'accueil : </label>
+                    @foreach( $horaires as $horaire)
+                    <div class="per-day">
+                        <span>Ouverture</span>
+                        <input type="time" name="open{{ $horaire->id}}" value="{{ $horaire->value[0] }}">
+                        <span>Fermeture</span>
+                        <input type="time" name="close{{ $horaire->id}}" value="{{ $horaire->value[1] }}">
+                    </div>
+                    @endforeach
+                    <button type="submit" class="btn btn-save">Enregistrer</button>
+                </form>
             </div>
         </div>
     </div>

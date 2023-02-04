@@ -40,7 +40,7 @@ button:focus{
   font-weight: 500;
   height: 40px;
   line-height: 20px;
-  margin: 0;
+  margin: 2px;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -53,12 +53,21 @@ button:focus{
     background-color: #80cce7;
 }
 
+.btn-save{
+    background-color: #e7e780;
+    color: #000;
+}
+
 .btn-back{
     background-color: #e7b280;
 }
 
 .btn-delete{
     background-color: #e78080;
+}
+
+.btn-update{
+    background-color: #e7cf80;
 }
 
 header {
@@ -505,6 +514,10 @@ canvas {
     justify-content: space-evenly;
 }
 
+.description-admin, .description{
+    width: 100%;
+}
+
 .description-admin, .horaires-admin{
     display: flex;
     flex-direction: column;
@@ -640,12 +653,18 @@ canvas {
 .admin-books .admin-book{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 10px;
 }
 
 
 .admin-books .admin-book img{
     height: 200px;
     width: min-content;
+}
+
+.admin-books .admin-book .btn{
+    margin: 2px;
 }
 
 .librairie{

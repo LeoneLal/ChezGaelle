@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::POST('/dashboard/update/{id}', [HomeController::class, 'update'])->middleware(['auth'])->name('dashboard.update');
+Route::POST('/dashboard/updateHours', [HomeController::class, 'updateHours'])->middleware(['auth'])->name('dashboard.updateHours');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

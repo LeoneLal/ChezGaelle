@@ -34,38 +34,38 @@ class BookController extends Controller
         $name = $request->file('file')->getClientOriginalName();
         $request->file->move(public_path('images/books'), $name);
 
-        $article = new Book;
-        $article->name = $request->name;
-        $article->picture_path = $name;
-        $article->author = $request->author;
-        $article->save();
+        $book= new Book;
+        $book->name = $request->name;
+        $book->picture_path = $name;
+        $book->author = $request->author;
+        $book->save();
 
         return redirect()->route('books.index');
     }
 
     public function edit($id)
     {
-        $article = Book::find($id);
+        $book= Book::find($id);
         if( Auth::user()->role == 'Administrateur')
-            return view('books.edit')->with('article', $article);
+            return view('books.edit')->with('book', $book);
         else
             return redirect()->route('index');
     }
 
     public function update(Request $request, $id)
     {
-        $article = Book::where('id', $id)->first();
-        $article->title = $request->get('title');
-        $article->body = $request->get('body');
-        $article->save();
+        $book= Book::where('id', $id)->first();
+        $book->title = $request->get('title');
+        $book->body = $request->get('body');
+        $book->save();
 
         return redirect('/admin/books');
     }
 
     public function destroy($id)
     {
-        $article = Book::where('id', $id)->first();
-        $article->delete();
+        $book= Book::where('id', $id)->first();
+        $book->delete();
         return redirect('/admin/books');
     }
 

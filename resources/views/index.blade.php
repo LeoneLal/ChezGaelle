@@ -75,10 +75,10 @@
         <div class="hours">
             <h1>Horaires</h1>
             <div class="hourByDay">
-                <p>Lundi - Jeudi : 7h00 - 21h00</p>
-                <p>Vendredi : 7h00 - 22h00</p>
-                <p>Samedi : 8h00 - 22h00</p>
-                <p>Dimanche : 9h00 - 13h00</p>
+                <p>Lundi - Jeudi : {{ $horaires[0]->value}}</p>
+                <p>Vendredi : {{ $horaires[1]->value}}</p>
+                <p>Samedi : {{ $horaires[2]->value}}</p>
+                <p>Dimanche : {{ $horaires[3]->value}}</p>
             </div>
         </div>
         <div class="coordonees">

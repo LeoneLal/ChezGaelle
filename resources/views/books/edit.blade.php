@@ -1,35 +1,30 @@
 <x-app-layout>
-    <div class="container">
-        <h2 class="subtitle">Modification</h2>
+    <div class="container edit-book">
+        <h2>Modification</h2>
         <div class="card">
-            <form enctype="multipart/form-data" action="{{ route('services.update', $book->id) }}" method="PUT">
+            <form enctype="multipart/form-data" action="{{ route('books.update', $book->id) }}" method="POST">
                 @csrf
                 <div class="bloc">
                     <label for="name">Titre : </label>
-                    <input class="input-text" type="text" name="name" value="{{ $book->name }}" id="name">
+                    <input class="input-text" type="text" name="title" value="{{ $book->name }}" id="title">
                 </div>
                 <div class="bloc">
                     <label for="name">Auteur : </label>
-                    <input class="input-text" type="text" name="name" value="{{ $book->author }}" id="name">
+                    <input class="input-text" type="text" name="author" value="{{ $book->author }}" id="author">
                 </div>
                 <div class="bloc">
-                    <label for="file">Modifier la photo : </label>
-                    <input type="file" name="file" placeholder="{{ $book->picture_path }}" id="file">
-                    @error('file')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
+                    <img class="actual" src="{{asset('images/books').'/'.$book->picture_path}}">
                 </div>
-                <div class="bloc">
-                    <img class="" src="{{ URL::to('/') }}/images/books/{{ $book->picture_path }}">
-                </div>
-                <button class="btn btn-save" type="submit">
-                    Modifier
-                </button>
-                <a href="{{ route('services.index') }}">
-                    <button class="btn btn-delete" type="button">
-                        Annuler
+                <div class="btns">
+                    <button class="btn btn-save" type="submit">
+                        Modifier
                     </button>
-                </a>
+                    <a href="{{ route('services.index') }}">
+                        <button class="btn btn-delete" type="button">
+                            Annuler
+                        </button>
+                    </a>
+                </div>
         </div>
         </form>
     </div>

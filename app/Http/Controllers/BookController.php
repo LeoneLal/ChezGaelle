@@ -55,8 +55,8 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         $book= Book::where('id', $id)->first();
-        $book->title = $request->get('title');
-        $book->body = $request->get('body');
+        $book->name = $request->get('title');
+        $book->author = $request->get('author');
         $book->save();
 
         return redirect('/admin/books');

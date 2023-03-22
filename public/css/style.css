@@ -28,7 +28,6 @@ button:focus{
 }
 
 .btn {
-  
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -68,6 +67,20 @@ button:focus{
 
 .btn-update{
     background-color: #e7cf80;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: max-content;
+    margin: 25px;
+    padding: 15px;
+}
+
+.input-text{
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(102, 102, 101);
 }
 
 header {
@@ -576,6 +589,7 @@ canvas {
 .container {
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 .column-card {
     flex-direction: column;
@@ -665,6 +679,17 @@ canvas {
 
 .admin-books .admin-book .btn{
     margin: 2px;
+}
+
+.container .card .bloc {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px;
+}
+
+.container .card .bloc label{
+    margin-right: 5px;
 }
 
 .librairie{

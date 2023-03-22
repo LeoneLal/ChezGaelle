@@ -32,18 +32,18 @@
         <section class="window">
             <div class="lasts">
                 <h2 class="title">Nos dernières sorties</h2>
-                <img class="shelf" src="{{ URL::to('/') }}/images/etagere.png" alt="Etagère">
+                <img class="shelf" src="{{ asset('/images/etagere.png') }}" alt="Etagère">
                 <div class="container">
                     <div class="book last">
-                        <img src="{{ URL::to('/') }}/images/books/{{ $lastBooks[0]->picture_path }}" alt="courveture livre">
+                        <img src="{{asset('images/books').'/'.$lastBooks[0]->picture_path}}" alt="courveture livre">
                         <p>{{ $lastBooks[0]->author }} - {{ $lastBooks[0]->name }}</p>
                     </div>
                     <div class="book second">
-                        <img src="{{ URL::to('/') }}/images/books/{{ $lastBooks[1]->picture_path }}" alt="courveture livre">
+                        <img src="{{asset('images/books').'/'.$lastBooks[1]->picture_path}}" alt="courveture livre">
                         <p>{{ $lastBooks[1]->author }} - {{ $lastBooks[1]->name }}</p>
                     </div>
                     <div class="book third">
-                        <img src="{{ URL::to('/') }}/images/books/{{ $lastBooks[2]->picture_path }}" alt="courveture livre">
+                        <img src="{{asset('images/books').'/'.$lastBooks[2]->picture_path}}" alt="courveture livre">
                         <p>{{ $lastBooks[2]->author }} - {{ $lastBooks[2]->name }}</p>
                     </div>
                 </div>
@@ -53,7 +53,8 @@
             <div class="books">
                 @foreach($books as $book)
                 <div class="book">
-                    <img class="cover" src="{{ URL::to('/') }}/images/books/{{ $book->picture_path }}" alt="courveture livre">
+                    <!-- <img class="cover" src="{{asset('images/books/$book->picture_path')}}" alt="courveture livre"> -->
+                    <img class="cover" src="{{asset('images/books').'/'.$book->picture_path}}" alt="courveture livre">
                     <div class="infos">
                         <p>{{ $book->name }}</p>
                         <p>par {{ $book->author }}</p>
